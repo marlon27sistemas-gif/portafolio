@@ -1,0 +1,345 @@
+<title>Portafolio de Marlon</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Concepto: pliego de imprenta. Marcas de corte en las esquinas, un blanco frío y tinta casi negra;
+   el único color fuerte es el cian de proceso, y el ticket de 80 mm es la pieza central. */
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --ink: #0f1a22;
+  --muted: #5a6b78;
+  --line: #d9e0e6;
+  --cyan: #0b7bb5;
+  --cyan-soft: #dbeef8;
+  --mag: #c2185b;
+  --ok: #2e7d32;
+  --display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --body: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d141a; --surface: #141d25; --ink: #e8eef2; --muted: #93a4b1; --line: #26333e;
+    --cyan: #4fb8ea; --cyan-soft: #12303f; --mag: #f06292; --ok: #7bc67e; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d141a; --surface: #141d25; --ink: #e8eef2; --muted: #93a4b1; --line: #26333e;
+  --cyan: #4fb8ea; --cyan-soft: #12303f; --mag: #f06292; --ok: #7bc67e; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font: 16px/1.6 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+}
+.wrap { max-width: 1080px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.08; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: var(--cyan); text-underline-offset: 3px; }
+.mono { font-family: var(--mono); }
+.label { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+
+/* barra superior */
+.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 22px; flex-wrap: wrap; }
+.top b { font-family: var(--display); font-size: 18px; letter-spacing: -.01em; }
+.top nav { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--ink); }
+
+/* hero */
+.hero { position: relative; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 48px; align-items: center; padding-block: 56px 72px; }
+.crop { position: absolute; width: 22px; height: 22px; border-color: var(--ink); border-style: solid; opacity: .55; }
+.crop.tl { top: 8px; left: -2px; border-width: 1px 0 0 1px; }
+.crop.tr { top: 8px; right: -2px; border-width: 1px 1px 0 0; }
+.crop.bl { bottom: 28px; left: -2px; border-width: 0 0 1px 1px; }
+.crop.br { bottom: 28px; right: -2px; border-width: 0 1px 1px 0; }
+.hero h1 { font-size: clamp(2.3rem, 5.4vw, 4rem); font-weight: 800; letter-spacing: -.03em; margin-block: 16px 22px; }
+.hero h1 em { font-style: normal; color: var(--cyan); }
+.hero .lead { font-size: 1.12rem; color: var(--muted); max-width: 54ch; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--ink); color: var(--ink); }
+.btn.main { background: var(--ink); color: var(--bg); }
+.btn:focus-visible, a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+.pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 28px; }
+.pill { font: 500 12.5px/1 var(--mono); padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+
+/* ticket */
+.ticket-wrap { display: grid; place-items: center; }
+.ticket { width: min(100%, 300px); background: #fff; color: #111; font: 12px/1.5 var(--mono); padding: 22px 20px 26px; box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 24px 40px -18px rgba(8,30,46,.35); transform: rotate(1.6deg);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), 96% 100%, 92% calc(100% - 8px), 88% 100%, 84% calc(100% - 8px), 80% 100%, 76% calc(100% - 8px), 72% 100%, 68% calc(100% - 8px), 64% 100%, 60% calc(100% - 8px), 56% 100%, 52% calc(100% - 8px), 48% 100%, 44% calc(100% - 8px), 40% 100%, 36% calc(100% - 8px), 32% 100%, 28% calc(100% - 8px), 24% 100%, 20% calc(100% - 8px), 16% 100%, 12% calc(100% - 8px), 8% 100%, 4% calc(100% - 8px), 0 100%); }
+.ticket .brand { text-align: center; font: 800 17px/1 var(--display); letter-spacing: -.01em; margin-bottom: 6px; }
+.ticket .c { text-align: center; }
+.ticket hr { border: 0; border-top: 1px dashed #777; margin: 9px 0; }
+.ticket .row { display: flex; justify-content: space-between; gap: 8px; }
+.ticket .tot { font-weight: 500; }
+.ticket .big { font-weight: 500; font-size: 14px; }
+.ticket small { color: #666; font-size: 10.5px; }
+
+/* secciones */
+section { padding-block: 64px; border-top: 1px solid var(--line); }
+.sec-head { display: grid; gap: 12px; margin-bottom: 36px; max-width: 62ch; }
+.sec-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); font-weight: 700; letter-spacing: -.025em; }
+.sec-head p { color: var(--muted); }
+
+/* de -> a */
+.shift { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 20px; align-items: stretch; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+.card h3 { font-size: 1.15rem; margin-bottom: 12px; }
+.card ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; color: var(--muted); font-size: 15px; }
+.card.new { border-color: var(--cyan); background: linear-gradient(var(--cyan-soft), var(--cyan-soft)) padding-box; }
+.card.new ul { color: var(--ink); }
+.arrow { align-self: center; font: 500 28px/1 var(--mono); color: var(--cyan); }
+
+/* módulos */
+.mods { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+.mod { grid-column: span 4; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.mod.wide { grid-column: span 6; }
+.mod h3 { font-size: 1.1rem; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.mod p { color: var(--muted); font-size: 15px; }
+.mod code { font: 12.5px var(--mono); color: var(--cyan); overflow-wrap: anywhere; }
+.st { font: 500 11px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 5px 8px; border-radius: 4px; white-space: nowrap; }
+.st.ok { background: color-mix(in srgb, var(--ok) 16%, transparent); color: var(--ok); }
+.st.wip { background: color-mix(in srgb, var(--mag) 14%, transparent); color: var(--mag); }
+
+/* arquitectura */
+.arch { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.layers { display: grid; gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.layer { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 16px; padding: 14px 18px; border-top: 1px solid var(--line); align-items: baseline; }
+.layer:first-child { border-top: 0; }
+.layer b { font: 500 12.5px var(--mono); color: var(--cyan); }
+.layer span { font-size: 14.5px; color: var(--muted); }
+.stack { display: grid; gap: 18px; }
+.stack h3 { font-size: 1rem; margin-bottom: 10px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font: 500 12.5px/1 var(--mono); padding: 8px 11px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; }
+
+/* decisiones */
+.dec { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.dec > div { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 32px; padding-block: 22px; border-bottom: 1px solid var(--line); }
+.dec h3 { font-size: 1.12rem; font-weight: 700; letter-spacing: -.01em; }
+.dec p { color: var(--muted); font-size: 15.5px; }
+
+/* contacto */
+.contact { text-align: left; }
+.contact h2 { font-size: clamp(1.9rem, 4vw, 3rem); letter-spacing: -.03em; max-width: 18ch; margin-bottom: 20px; }
+footer { padding-block: 28px 40px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 40px; padding-block: 36px 56px; }
+  .shift { grid-template-columns: 1fr; }
+  .arrow { transform: rotate(90deg); justify-self: center; }
+  .mod, .mod.wide { grid-column: span 12; }
+  .arch { grid-template-columns: 1fr; }
+  .dec > div { grid-template-columns: 1fr; gap: 8px; }
+  .layer { grid-template-columns: 1fr; gap: 4px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ticket { transition: transform .35s ease; }
+  .ticket:hover { transform: rotate(0deg) translateY(-4px); }
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <b>Marlon · Desarrollo de software</b>
+    <nav aria-label="Secciones">
+      <a href="#proyecto">Proyecto</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#arquitectura">Arquitectura</a>
+      <a href="#decisiones">Decisiones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <span class="crop tl"></span><span class="crop tr"></span><span class="crop bl"></span><span class="crop br"></span>
+    <div>
+      <span class="label">Caso de estudio · Sistema para imprenta</span>
+      <h1>Migré el sistema de una imprenta de <em>Jakarta EE</em> a Spring Boot y React.</h1>
+      <p class="lead">ImprentaManager lleva las ventas, los cobros, los gastos y el cierre de caja de una imprenta real. Lo reconstruí capa por capa, conservando la base de datos MySQL y las contraseñas existentes, con una interfaz más clara y un ticket térmico de 80 mm generado en PDF.</p>
+      <div class="cta">
+        <a class="btn main" href="#modulos">Ver módulos</a>
+        <a class="btn" href="https://github.com/marlon27sistemas-gif" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="pills" aria-label="Tecnologías principales">
+        <span class="pill">Java 17</span><span class="pill">Spring Boot 3</span><span class="pill">React 18 + TypeScript</span><span class="pill">MySQL</span>
+      </div>
+    </div>
+    <div class="ticket-wrap" aria-label="Ejemplo del ticket que genera el sistema, con datos ficticios">
+      <div class="ticket">
+        <div class="brand">IMPRENTA</div>
+        <div class="c">RUC 00000000000<br>Dirección del local<br><small>Horario de atención</small></div>
+        <hr>
+        <div class="row"><span>Ticket</span><span>K-000-00000000-001</span></div>
+        <div class="row"><span>Cliente</span><span>CLIENTE DE EJEMPLO</span></div>
+        <div class="row"><span>Entrega</span><span>10/01/2026</span></div>
+        <hr>
+        <div class="row"><b>Descripción</b><b>Total</b></div>
+        <div>Banner - Lona 13 oz [2.00m x 1.00m]</div>
+        <div class="row"><span>1 x 60.00</span><span>60.00</span></div>
+        <div>Tarjetas - Couché 300 g</div>
+        <div class="row"><span>2 x 25.00</span><span>50.00</span></div>
+        <hr>
+        <div class="row big"><span>TOTAL</span><span>S/ 110.00</span></div>
+        <div class="row tot"><span>A cuenta</span><span>S/ 50.00</span></div>
+        <div class="row tot"><span>Saldo pendiente</span><span>S/ 60.00</span></div>
+        <hr>
+        <div class="c"><small>ESTADO: PAGO PARCIAL</small><br>¡Gracias por su preferencia!</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="proyecto">
+    <div class="sec-head">
+      <span class="label">El proyecto</span>
+      <h2>Un sistema en uso que había que modernizar sin detenerlo.</h2>
+      <p>El sistema original corría en WildFly con tres módulos: pedidos, ventas y la interfaz web. La meta no era empezar de cero, sino llevar lo que ya funcionaba a un stack más simple de mantener y de extender, y migrarlo pantalla por pantalla.</p>
+    </div>
+    <div class="shift">
+      <div class="card">
+        <h3>Antes · Jakarta EE</h3>
+        <ul>
+          <li>Módulos ejbPedidoMvp, ejbVentas y VentasMVP en WildFly</li>
+          <li>Vistas JSF (xhtml) y beans administrados</li>
+          <li>Ticket generado con JasperReports</li>
+          <li>Contraseñas con PBKDF2 propio</li>
+        </ul>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="card new">
+        <h3>Ahora · Spring Boot + React</h3>
+        <ul>
+          <li>API REST con autenticación JWT sin estado</li>
+          <li>Frontend SPA en React con TypeScript y Vite</li>
+          <li>Ticket PDF de 80 mm generado en el backend</li>
+          <li>Mismos usuarios y misma base de datos MySQL</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="modulos">
+    <div class="sec-head">
+      <span class="label">Módulos migrados</span>
+      <h2>Lo que ya funciona en la nueva versión.</h2>
+      <p>Cada módulo tiene su endpoint, su servicio y sus pruebas en el backend, y su pantalla propia en el frontend.</p>
+    </div>
+    <div class="mods">
+      <article class="mod wide">
+        <h3>Inicio de sesión <span class="st ok">Listo</span></h3>
+        <p>Los usuarios del sistema anterior entran con su misma contraseña. El backend reconoce el formato PBKDF2 de Jakarta (sal y hash en Base64, 65 536 iteraciones) además de BCrypt, y devuelve un token JWT con el id y el rol.</p>
+        <code>POST /api/auth/login</code>
+      </article>
+      <article class="mod wide">
+        <h3>Ventas <span class="st ok">Listo</span></h3>
+        <p>Dos vistas: por entregar y entregadas, con búsqueda, filtros por columna, orden y paginación. El cliente se resuelve desde personas naturales o padrón RUC. Cada usuario ve solo sus ventas; el administrador ve todas.</p>
+        <code>GET /api/ventas?tab=pendientes</code>
+      </article>
+      <article class="mod">
+        <h3>Ticket e impresión rápida <span class="st ok">Listo</span></h3>
+        <p>PDF térmico de 80 mm con altura calculada según el contenido, para descargar o mandar directo a la impresora.</p>
+        <code>GET /api/ventas/{id}/ticket</code>
+      </article>
+      <article class="mod">
+        <h3>Gastos <span class="st ok">Listo</span></h3>
+        <p>Alta, edición y baja lógica, con listado paginado, búsqueda y orden. Cada usuario administra los suyos.</p>
+        <code>/api/gastos</code>
+      </article>
+      <article class="mod">
+        <h3>Nueva venta y detalle <span class="st ok">Listo</span></h3>
+        <p>Registro de la venta con sus líneas de servicio y material, y pantalla de detalle con los montos y el saldo.</p>
+        <code>/api/ventas</code>
+      </article>
+      <article class="mod wide">
+        <h3>Cierre de caja <span class="st ok">Listo</span></h3>
+        <p>Cobros contra gastos en un rango de fechas: total cobrado, total de gastos y saldo disponible; desglose por método de pago (efectivo, Yape, Plin, transferencia) y por tipo de venta; detalle de ingresos y salidas con exportación a Excel.</p>
+        <code>GET /api/reportes/caja?desde=…&amp;hasta=…</code>
+      </article>
+      <article class="mod wide">
+        <h3>Pagos de la venta <span class="st wip">En curso</span></h3>
+        <p>Es la pantalla que falta para cerrar el ciclo de cobro. La tabla de pagos ya alimenta el cierre de caja; falta la interfaz para registrar abonos.</p>
+        <code>/ventas/:id/pagos</code>
+      </article>
+    </div>
+  </section>
+
+  <section id="arquitectura">
+    <div class="sec-head">
+      <span class="label">Arquitectura</span>
+      <h2>Capas claras, una responsabilidad por carpeta.</h2>
+      <p>El backend sigue la misma estructura en todos los módulos, así cada pantalla nueva se agrega con el mismo patrón.</p>
+    </div>
+    <div class="arch">
+      <div class="layers" role="list">
+        <div class="layer" role="listitem"><b>controllers</b><span>Endpoints REST y validación de la petición.</span></div>
+        <div class="layer" role="listitem"><b>services</b><span>Reglas de negocio: visibilidad por usuario, ticket, cierre de caja.</span></div>
+        <div class="layer" role="listitem"><b>repository</b><span>Spring Data JPA; consultas con JDBC donde hay uniones complejas.</span></div>
+        <div class="layer" role="listitem"><b>entity · dto</b><span>Entidades de la base y objetos de entrada y salida separados.</span></div>
+        <div class="layer" role="listitem"><b>security</b><span>Filtro JWT, usuario autenticado y roles.</span></div>
+        <div class="layer" role="listitem"><b>exception</b><span>Errores uniformes con código y mensaje legible.</span></div>
+      </div>
+      <div class="stack">
+        <div>
+          <h3>Backend</h3>
+          <div class="tags"><span class="tag">Java 17</span><span class="tag">Spring Boot</span><span class="tag">Spring Security</span><span class="tag">JWT</span><span class="tag">JPA / Hibernate</span><span class="tag">Bean Validation</span><span class="tag">OpenPDF</span><span class="tag">JUnit + Mockito</span></div>
+        </div>
+        <div>
+          <h3>Frontend</h3>
+          <div class="tags"><span class="tag">React 18</span><span class="tag">TypeScript</span><span class="tag">Vite</span><span class="tag">React Router</span><span class="tag">Axios</span></div>
+        </div>
+        <div>
+          <h3>Datos y herramientas</h3>
+          <div class="tags"><span class="tag">MySQL</span><span class="tag">Maven</span><span class="tag">Git y GitHub</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="decisiones">
+    <div class="sec-head">
+      <span class="label">Decisiones técnicas</span>
+      <h2>Los problemas concretos y cómo los resolví.</h2>
+    </div>
+    <div class="dec">
+      <div>
+        <h3>Conservar las contraseñas existentes</h3>
+        <p>Pedirle a todos que cambien su clave habría frenado la migración. Implementé la verificación PBKDF2 del sistema original y la contrasté con la clase anterior antes de aceptar el formato.</p>
+      </div>
+      <div>
+        <h3>La visibilidad se valida en el servidor</h3>
+        <p>Ocultar ventas en la pantalla no basta. El servicio comprueba el dueño de cada venta y responde 404 si pertenece a otro usuario, también para el ticket y las acciones de entrega y anulación.</p>
+      </div>
+      <div>
+        <h3>Ticket con altura exacta</h3>
+        <p>La impresora térmica no tiene un largo fijo de página. El PDF se dibuja primero en una página alta para medir el contenido y luego se vuelve a generar con el alto justo.</p>
+      </div>
+      <div>
+        <h3>Impresión rápida sin abrir pestañas</h3>
+        <p>El PDF se descarga autenticado como binario y se envía a imprimir desde un marco oculto, de modo que el cajero imprime con un clic y sin diálogos extra.</p>
+      </div>
+      <div>
+        <h3>Migrar por pantallas, con pruebas</h3>
+        <p>Cada módulo se entregó completo (endpoint, servicio, pantalla y pruebas) y funcionando junto al sistema anterior, para poder comparar resultados, como los totales del cierre de caja, entre ambas versiones.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact">
+    <span class="label">Contacto</span>
+    <h2 style="margin-top:14px">¿Necesitas modernizar un sistema como este?</h2>
+    <div class="cta">
+      <a class="btn main" href="https://github.com/marlon27sistemas-gif" target="_blank" rel="noopener">Ver mi GitHub</a>
+    </div>
+    <p style="margin-top:18px;color:var(--muted);max-width:60ch">El código de ImprentaManager está en un repositorio privado porque contiene la lógica de un negocio real. Puedo mostrarlo en una llamada o preparar una versión pública con datos de ejemplo.</p>
+  </section>
+
+  <footer>
+    <span>Marlon · Lima, Perú</span>
+    <span>Los datos del ticket son ficticios.</span>
+  </footer>
+</div>
